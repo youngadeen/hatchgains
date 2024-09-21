@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to HATCHGAINS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #003d29;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        background-color: #f4f4f4;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+      }
+
+      nav a {
+        color: #003d29;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+        font-size: 18px;
+        display: inline-block;
+      }
+
+      nav a:hover {
+        color: #1a9349;
+      }
+
+      /* Responsive Hamburger Menu */
+      .menu {
+        display: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: #003d29;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-links a {
+        margin: 0 15px;
+        font-size: 18px;
+      }
+
+      .hero-section {
+        background-image: url("catfish_hero.jpg"); /* Add your hero image */
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 0 20px;
+      }
+
+      .hero-section h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .hero-section p {
+        font-size: 20px;
+        max-width: 700px;
+      }
+
+      .btn-primary {
+        background-color: #1a9349;
+        color: white;
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #146634;
+      }
+
+      .content-section {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: white;
+      }
+
+      .content-section h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .card {
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        flex: 1;
+        max-width: 300px;
+        text-align: left;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        padding: 0;
+      }
+
+      .card h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 16px;
+        color: #555;
+      }
+
+      footer {
+        background-color: #003d29;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 16px;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 28px;
+        }
+
+        .hero-section p {
+          font-size: 18px;
+        }
+
+        .cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu {
+          display: block;
+          text-align: center;
+          padding: 10px 0;
+        }
+
+        nav a {
+          margin: 10px 0;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-section h1 {
+          font-size: 22px;
+        }
+
+        .hero-section p {
+          font-size: 16px;
+        }
+
+        .btn-primary {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+
+        .content-section h2 {
+          font-size: 24px;
+        }
+
+        footer {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>HATCHGAINS - Catfish Farming & Food Processing</header>
+
+    <nav>
+      <div class="menu" onclick="toggleMenu()">☰ Menu</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Our Services</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-section">
+      <div>
+        <h1>Welcome to HATCHGAINS</h1>
+        <p>
+          Leading the way in sustainable catfish farming and premium food
+          processing, delivering fresh, healthy, and responsibly produced fish
+          straight to your table.
+        </p>
+        <a href="#learn-more" class="btn-primary">Learn More</a>
+      </div>
+    </div>
+
+    <section class="content-section" id="learn-more">
+      <h2>Our Expertise</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="catfish_farming.jpg" alt="Catfish Farming" />
+          <h3>Sustainable Catfish Farming</h3>
+          <p>
+            We specialize in environmentally friendly methods of catfish
+            farming, ensuring high-quality produce while protecting natural
+            ecosystems.
+          </p>
+        </div>
+        <div class="card">
+          <img src="food_processing.jpg" alt="Food Processing" />
+          <h3>Food Processing</h3>
+          <p>
+            Our state-of-the-art food processing ensures that our fish products
+            are fresh, nutritious, and meet the highest standards of quality.
+          </p>
+        </div>
+        <div class="card">
+          <img src="customer_service.jpg" alt="Customer Service" />
+          <h3>Customer Service</h3>
+          <p>
+            We pride ourselves on excellent customer service, ensuring our
+            clients receive the freshest products with prompt delivery and
+            support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2024 HATCHGAINS. All rights reserved. |
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
